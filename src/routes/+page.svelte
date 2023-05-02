@@ -13,7 +13,8 @@
 	let toDecode = '';
 	let decoded = '';
 	$: try {
-		decoded = decode(toDecode).toString();
+		const decodedRaw = decode(toDecode).toString();
+		decoded = decodedRaw ? `[${decodedRaw}]` : '';
 	} catch (err) {
 		decoded = '';
 	}
